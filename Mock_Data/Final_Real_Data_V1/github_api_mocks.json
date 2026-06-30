@@ -1,0 +1,269 @@
+{
+  "alice-golden": {
+    "profile": {
+      "login": "alice-golden",
+      "name": "Alice Golden",
+      "email": "alice.golden@gold.com",
+      "bio": "Building the future of gold.",
+      "company": "Golden Corp",
+      "blog": "https://alicegolden.dev",
+      "location": "San Francisco, CA",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "gold-miner",
+        "language": "Go"
+      },
+      {
+        "name": "shiny-app",
+        "language": "TypeScript"
+      }
+    ]
+  },
+  "bob-architect": {
+    "profile": {
+      "login": "bob-architect",
+      "name": "Bob B.",
+      "email": "bob@construct.io",
+      "bio": "Architecting big things.",
+      "company": "@construct-io",
+      "blog": "https://bob.io",
+      "location": "New York, NY",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "hammer",
+        "language": "Rust"
+      },
+      {
+        "name": "nail",
+        "language": "Rust"
+      },
+      {
+        "name": "blueprint",
+        "language": "Python"
+      }
+    ]
+  },
+  "minimal-edgy": {
+    "profile": {
+      "login": "minimal-edgy",
+      "name": null,
+      "email": null,
+      "bio": null,
+      "company": null,
+      "blog": null,
+      "location": null,
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "just-one-repo",
+        "language": null
+      }
+    ]
+  },
+  "void-coder": {
+    "profile": {
+      "login": "void-coder",
+      "name": "Empty Repos",
+      "email": "empty.repos@void.com",
+      "bio": "I don't push code.",
+      "company": "Void Co",
+      "blog": "",
+      "location": "Space",
+      "type": "User"
+    },
+    "repos": []
+  },
+  "zoe-accent": {
+    "profile": {
+      "login": "zoe-accent",
+      "name": "Zo\u00eb O'Connor \u00f1a",
+      "email": "zoe.oconnor@accent.com",
+      "bio": "I \u2764\ufe0f data & unicode! \ud83d\udc69\u200d\ud83d\udcbb\u2728",
+      "company": "Accent O\u00dc",
+      "blog": "https://zo\u00eb.com",
+      "location": "Reykjav\u00edk, Iceland",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "data-\u00e6\u00f8\u00e5",
+        "language": "Python"
+      },
+      {
+        "name": "emoji-lang",
+        "language": "Julia"
+      }
+    ]
+  },
+  "rate-limity-new": {
+    "status_code": 403,
+    "error": "API rate limit exceeded"
+  },
+  "mismatch-charlie": {
+    "profile": {
+      "login": "mismatch-charlie",
+      "name": "David Doe",
+      "email": "david.doe@different.com",
+      "bio": "Actor?",
+      "company": "Another Inc",
+      "blog": "https://david.dev",
+      "location": "LA",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "acting-scripts",
+        "language": "Ruby"
+      }
+    ]
+  },
+  "deleted-user-404": {
+    "status_code": 404,
+    "error": "Not Found"
+  },
+  "torvalds": {
+    "profile": {
+      "login": "torvalds",
+      "name": "Linus Torvalds",
+      "email": "torvalds@linux-foundation.org",
+      "bio": "Linux Kernel Developer",
+      "company": "Linux Foundation",
+      "blog": "",
+      "location": "Portland, OR",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "linux",
+        "language": "C"
+      },
+      {
+        "name": "pesconvert",
+        "language": "C"
+      }
+    ]
+  },
+  "gvanrossum": {
+    "profile": {
+      "login": "gvanrossum",
+      "name": "Guido van Rossum",
+      "email": "guido@python.org",
+      "bio": "Creator of Python",
+      "company": "Microsoft",
+      "blog": "https://gvanrossum.github.io",
+      "location": "Belmont, CA",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "mypy",
+        "language": "Python"
+      },
+      {
+        "name": "cpython",
+        "language": "C"
+      }
+    ]
+  },
+  "brendaneich": {
+    "profile": {
+      "login": "brendaneich",
+      "name": "Brendan Eich",
+      "email": "brendan@brave.com",
+      "bio": "Creator of JavaScript",
+      "company": "Brave Software",
+      "blog": "https://brendaneich.com",
+      "location": "California",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "brave-browser",
+        "language": "JavaScript"
+      }
+    ]
+  },
+  "tj": {
+    "profile": {
+      "login": "tj",
+      "name": "TJ",
+      "email": null,
+      "bio": null,
+      "company": "Apex",
+      "blog": "",
+      "location": null,
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "archive",
+        "language": "Go"
+      },
+      {
+        "name": "archivex",
+        "language": "Go"
+      },
+      {
+        "name": "assert",
+        "language": "Go"
+      }
+    ]
+  },
+  "getify": {
+    "profile": {
+      "login": "getify",
+      "name": "Kyle Simpson",
+      "email": null,
+      "bio": "Kyle Simpson is a Human-Centric Technologist. He's fighting for the people behind the pixels.",
+      "company": "Getify Solutions",
+      "blog": "http://getify.me",
+      "location": "Austin, TX",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "A-Tale-Of-Three-Lists",
+        "language": "JavaScript"
+      },
+      {
+        "name": "asyncGate.js",
+        "language": "JavaScript"
+      },
+      {
+        "name": "asynquence",
+        "language": "JavaScript"
+      }
+    ]
+  },
+  "sindresorhus": {
+    "profile": {
+      "login": "sindresorhus",
+      "name": "Sindre Sorhus",
+      "email": null,
+      "bio": "Full-Time Open-Sourcerer. Focused on Swift & JavaScript. Makes macOS apps, CLI tools, npm packages.",
+      "company": null,
+      "blog": "https://sindresorhus.com/apps",
+      "location": null,
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "-",
+        "language": null
+      },
+      {
+        "name": ".github",
+        "language": null
+      },
+      {
+        "name": "acosh",
+        "language": "JavaScript"
+      }
+    ]
+  }
+}

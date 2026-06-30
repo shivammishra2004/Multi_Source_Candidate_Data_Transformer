@@ -2,6 +2,7 @@ import logging
 import re
 from typing import Dict, Any, List, Optional
 from .models import CanonicalProfile
+from .normalizer import Normalizer
 
 logger = logging.getLogger(__name__)
 
@@ -93,8 +94,39 @@ class Projector:
                     
                     is_empty = val is None or (isinstance(val, list) and len(val) == 0) or (isinstance(val, dict) and not any(val.values()))
                     
+                    if not is_empty and isinstance(field_def, dict):
+                        normalize_rule = field_def.get("normalize")
+                        if normalize_rule == "E164":
+                            val = Normalizer.format_phone(val)
+                        elif normalize_rule == "canonical":
+                            if isinstance(val, list):
+                                val = list(Normalizer.normalize_skills(val))
+                            elif isinstance(val, str):
+                                val = Normalizer.normalize_skill(val)
+
+                        expected_type = field_def.get("type")
+                        if expected_type:
+                            try:
+                                if expected_type == "string" and not isinstance(val, str):
+                                    val = str(val)
+                                elif expected_type == "number" and not isinstance(val, (int, float)):
+                                    val = float(val)
+                                elif expected_type == "string[]":
+                                    if not isinstance(val, list):
+                                        val = [str(val)]
+                                    else:
+                                        val = [str(v) for v in val]
+                            except (ValueError, TypeError):
+                                if field_def.get("on_missing", global_on_missing) == "error" and required:
+                                    raise ValueError(f"Type mismatch for {source_path}: expected {expected_type}")
+                                is_empty = True
+                                val = None
+
+                    # Re-evaluate is_empty after normalization and typing
+                    is_empty = val is None or (isinstance(val, list) and len(val) == 0) or (isinstance(val, dict) and not any(val.values()))
+                    
                     if is_empty:
-                        on_missing = field_def.get("on_missing", global_on_missing)
+                        on_missing = field_def.get("on_missing", global_on_missing) if isinstance(field_def, dict) else global_on_missing
                         # We only throw error if required=True and on_missing="error", OR if on_missing="error" applies to all.
                         # Actually the tests imply on_missing="error" triggers if required=True
                         if on_missing == "error" and required:

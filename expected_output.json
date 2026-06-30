@@ -1,0 +1,164 @@
+{
+  "candidates": [
+    {
+      "full_name": "Linus Torvalds",
+      "primary_email": "torvalds@linux-foundation.org",
+      "phone": "+15559990001",
+      "skills": [
+        "c"
+      ],
+      "overall_confidence": 0.9,
+      "provenance": [
+        {
+          "field": "full_name",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "headline",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "company",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "location",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "emails",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "phones",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "skills",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "full_name": "Guido van Rossum",
+      "primary_email": "guido@python.org",
+      "phone": "+15559990002",
+      "skills": [
+        "c",
+        "python"
+      ],
+      "overall_confidence": 0.9,
+      "provenance": [
+        {
+          "field": "full_name",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "headline",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "company",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "location",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "emails",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "phones",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "skills",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "full_name": "Brendan Eich",
+      "primary_email": "brendan@brave.com",
+      "phone": "+15559990003",
+      "skills": [
+        "javascript"
+      ],
+      "overall_confidence": 0.9,
+      "provenance": [
+        {
+          "field": "full_name",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "headline",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "company",
+          "source": "GitHub",
+          "method": "weight_resolution",
+          "confidence": 0.9
+        },
+        {
+          "field": "location",
+          "source": "GitHub",
+          "method": "weight_fallback",
+          "confidence": 0.9
+        },
+        {
+          "field": "emails",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "phones",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        },
+        {
+          "field": "skills",
+          "source": "CSV,GitHub",
+          "method": "set_union",
+          "confidence": 0.9
+        }
+      ]
+    }
+  ]
+}

@@ -31,7 +31,8 @@ class CSVExtractor(BaseExtractor):
                     # We will do greedy extraction: if something is missing, just don't set it (leave as default)
                     
                     if 'name' in cleaned_row:
-                        profile.full_name = cleaned_row['name']
+                        norm_name = Normalizer.normalize_name(cleaned_row['name'])
+                        if norm_name: profile.full_name = norm_name
                     
                     if 'email' in cleaned_row:
                         norm_email = Normalizer.normalize_email(cleaned_row['email'])

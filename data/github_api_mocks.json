@@ -11,16 +11,11 @@
       "type": "User"
     },
     "repos": [
-      {
-        "name": "gold-miner",
-        "language": "Go"
-      },
-      {
-        "name": "shiny-app",
-        "language": "TypeScript"
-      }
+      {"name": "gold-miner", "language": "Go"},
+      {"name": "shiny-app", "language": "TypeScript"}
     ]
   },
+
   "bob-architect": {
     "profile": {
       "login": "bob-architect",
@@ -33,20 +28,12 @@
       "type": "User"
     },
     "repos": [
-      {
-        "name": "hammer",
-        "language": "Rust"
-      },
-      {
-        "name": "nail",
-        "language": "Rust"
-      },
-      {
-        "name": "blueprint",
-        "language": "Python"
-      }
+      {"name": "hammer", "language": "Rust"},
+      {"name": "nail", "language": "Rust"},
+      {"name": "blueprint", "language": "Python"}
     ]
   },
+
   "minimal-edgy": {
     "profile": {
       "login": "minimal-edgy",
@@ -59,12 +46,10 @@
       "type": "User"
     },
     "repos": [
-      {
-        "name": "just-one-repo",
-        "language": null
-      }
+      {"name": "just-one-repo", "language": null}
     ]
   },
+
   "void-coder": {
     "profile": {
       "login": "void-coder",
@@ -78,32 +63,29 @@
     },
     "repos": []
   },
+
   "zoe-accent": {
     "profile": {
       "login": "zoe-accent",
-      "name": "Zo\u00eb O'Connor \u00f1a",
+      "name": "Zoë O'Connor ña",
       "email": "zoe.oconnor@accent.com",
-      "bio": "I \u2764\ufe0f data & unicode! \ud83d\udc69\u200d\ud83d\udcbb\u2728",
-      "company": "Accent O\u00dc",
-      "blog": "https://zo\u00eb.com",
-      "location": "Reykjav\u00edk, Iceland",
+      "bio": "I ❤️ data & unicode! 👩‍💻✨",
+      "company": "Accent OÜ",
+      "blog": "https://zoë.com",
+      "location": "Reykjavík, Iceland",
       "type": "User"
     },
     "repos": [
-      {
-        "name": "data-\u00e6\u00f8\u00e5",
-        "language": "Python"
-      },
-      {
-        "name": "emoji-lang",
-        "language": "Julia"
-      }
+      {"name": "data-æøå", "language": "Python"},
+      {"name": "emoji-lang", "language": "Julia"}
     ]
   },
+
   "rate-limity-new": {
     "status_code": 403,
     "error": "API rate limit exceeded"
   },
+
   "mismatch-charlie": {
     "profile": {
       "login": "mismatch-charlie",
@@ -116,76 +98,12 @@
       "type": "User"
     },
     "repos": [
-      {
-        "name": "acting-scripts",
-        "language": "Ruby"
-      }
+      {"name": "acting-scripts", "language": "Ruby"}
     ]
   },
+
   "deleted-user-404": {
     "status_code": 404,
     "error": "Not Found"
-  },
-  "torvalds": {
-    "profile": {
-      "login": "torvalds",
-      "name": "Linus Torvalds",
-      "email": "torvalds@linux-foundation.org",
-      "bio": "Linux Kernel Developer",
-      "company": "Linux Foundation",
-      "blog": "",
-      "location": "Portland, OR",
-      "type": "User"
-    },
-    "repos": [
-      {
-        "name": "linux",
-        "language": "C"
-      },
-      {
-        "name": "pesconvert",
-        "language": "C"
-      }
-    ]
-  },
-  "gvanrossum": {
-    "profile": {
-      "login": "gvanrossum",
-      "name": "Guido van Rossum",
-      "email": "guido@python.org",
-      "bio": "Creator of Python",
-      "company": "Microsoft",
-      "blog": "https://gvanrossum.github.io",
-      "location": "Belmont, CA",
-      "type": "User"
-    },
-    "repos": [
-      {
-        "name": "mypy",
-        "language": "Python"
-      },
-      {
-        "name": "cpython",
-        "language": "C"
-      }
-    ]
-  },
-  "brendaneich": {
-    "profile": {
-      "login": "brendaneich",
-      "name": "Brendan Eich",
-      "email": "brendan@brave.com",
-      "bio": "Creator of JavaScript",
-      "company": "Brave Software",
-      "blog": "https://brendaneich.com",
-      "location": "California",
-      "type": "User"
-    },
-    "repos": [
-      {
-        "name": "brave-browser",
-        "language": "JavaScript"
-      }
-    ]
   }
 }

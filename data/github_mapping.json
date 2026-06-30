@@ -1,9 +1,10 @@
 {
-  "torvalds@linux-foundation.org": "https://github.com/torvalds",
-  "guido@python.org": "https://github.com/gvanrossum",
-  "brendan@brave.com": "https://github.com/brendaneich",
-  "contact@vercel.com": "https://github.com/vercel",
-  "ghost@nowhere.com": "https://github.com/nonexistent-user-xyz123",
-  "actions@github.com": "https://github.com/github-actions%5Bbot%5D",
-  "sindresorhus@gmail.com": "https://github.com/sindresorhus"
+  "alice.golden@gold.com": "https://github.com/alice-golden",
+  "bob.builds@construct.io": "https://github.com/bob-architect",
+  "minimal.edgy@edge.com": "https://github.com/minimal-edgy",
+  "empty.repos@void.com": "https://github.com/void-coder",
+  "zoe.oconnor@accent.com": "https://github.com/zoe-accent",
+  "rate.limit@error.com": "https://github.com/rate-limity-new",
+  "charlie@chap.com": "https://github.com/mismatch-charlie",
+  "deleted@nowhere.com": "https://github.com/deleted-user-404"
 }

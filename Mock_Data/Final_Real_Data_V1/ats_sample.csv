@@ -1,0 +1,12 @@
+name,email,phone,current_company,title
+Linus Torvalds,torvalds@linux-foundation.org,555999-0001,Linux Foundation,Creator
+Guido van Rossum,guido@python.org,++555-999-0002,Microsoft,Distinguished Engineer
+Brendan Eich,brendan@brave.com,555-999     -0003,Brave Software,CEO
+Vercel Org,contact@vercel.com,555-000-0004,Vercel,Organization Edge Case
+Missing User,ghost@nowhere.com,555-000-0005,Nowhere,404 Edge Case
+GitHub Actions Bot,actions@github.com,555-000-0006,GitHub,Bot Edge Case
+  Sindre  Sorhus  ,  sindresorhus@GMAIL.com , 555-000-0007 , ,  
+   T.J HolowayChuk , tj@APEX.sh,   +1 (555) 111-2222  ,   ,  Developer 
+ KyLe      Simpson , KYLE@getify.me , , ,  
+Jane Doe,jane.work@company.com,5550198,San Francisco,Senior Engineer
+John Smith,,+1-555-0100,New York,Developer

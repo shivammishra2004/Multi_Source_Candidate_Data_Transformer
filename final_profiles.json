@@ -7,32 +7,44 @@
       "skills": [
         "javascript"
       ],
-      "overall_confidence": 0.7666666666666666
+      "overall_confidence": 0.7
+    },
+    {
+      "full_name": "KyLe Simpson",
+      "primary_email": "kyle@getify.me",
+      "phone": null,
+      "skills": [
+        "html",
+        "go",
+        "javascript",
+        "c++"
+      ],
+      "overall_confidence": 0.7499999999999999
     },
     {
       "full_name": "Linus Torvalds",
       "primary_email": "torvalds@linux-foundation.org",
       "phone": "+15559990001",
       "skills": [
-        "c",
         "c++",
+        "c",
         "openscad"
       ],
-      "overall_confidence": 0.9
+      "overall_confidence": 0.7666666666666666
     },
     {
       "full_name": "Guido van Rossum",
       "primary_email": "guido@python.org",
-      "phone": "+15559990002",
+      "phone": "+5559990002",
       "skills": [
-        "typescript",
-        "html",
         "python",
-        "javascript",
+        "c",
+        "html",
+        "typescript",
         "c++",
-        "c"
+        "javascript"
       ],
-      "overall_confidence": 0.9
+      "overall_confidence": 0.7666666666666666
     },
     {
       "full_name": "Brendan Eich",
@@ -40,23 +52,23 @@
       "phone": "+15559990003",
       "skills": [
         "html",
-        "css",
-        "javascript"
+        "javascript",
+        "css"
       ],
-      "overall_confidence": 0.85
+      "overall_confidence": 0.7166666666666666
     },
     {
-      "full_name": "Vercel",
+      "full_name": "Vercel Org",
       "primary_email": "contact@vercel.com",
       "phone": "+15550000004",
       "skills": [
         "typescript",
+        "ruby",
         "javascript",
         "go",
-        "svelte",
-        "ruby"
+        "svelte"
       ],
-      "overall_confidence": 0.7166666666666666
+      "overall_confidence": 0.5833333333333333
     },
     {
       "full_name": "github-actions[bot]",
@@ -66,9 +78,36 @@
       "overall_confidence": 0.6499999999999999
     },
     {
+      "full_name": "T.J HolowayChuk",
+      "primary_email": "tj@apex.sh",
+      "phone": "+15551112222",
+      "skills": [
+        "c",
+        "ruby",
+        "javascript",
+        "go",
+        "shell"
+      ],
+      "overall_confidence": 0.6499999999999999
+    },
+    {
+      "full_name": "Jane Doe",
+      "primary_email": "jane.work@company.com",
+      "phone": "+15550198",
+      "skills": null,
+      "overall_confidence": 0.45
+    },
+    {
       "full_name": "Missing User",
       "primary_email": "ghost@nowhere.com",
       "phone": "+15550000005",
+      "skills": null,
+      "overall_confidence": 0.5
+    },
+    {
+      "full_name": "John Smith",
+      "primary_email": null,
+      "phone": "+15550100",
       "skills": null,
       "overall_confidence": 0.5
     }

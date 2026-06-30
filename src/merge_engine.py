@@ -197,7 +197,12 @@ class MergeEngine:
                 if v1 != v2:
                     conflicts += 1
                     
-                if w1 > w2:
+                if field_name == 'full_name' and isinstance(v1, str) and isinstance(v2, str):
+                    if len(v1) >= len(v2):
+                        winner_val, winner_src, winner_weight = v1, src1, w1
+                    else:
+                        winner_val, winner_src, winner_weight = v2, src2, w2
+                elif w1 > w2:
                     winner_val, winner_src, winner_weight = v1, src1, w1
                 elif w2 > w1:
                     winner_val, winner_src, winner_weight = v2, src2, w2

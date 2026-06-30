@@ -86,10 +86,14 @@ class GitHubExtractor(BaseExtractor):
                 if data.get('email'):
                     profile.emails.append(data.get('email'))
                     
+                from ..normalizer import Normalizer
+                
                 if data.get('name'):
-                    profile.full_name = data.get('name')
+                    norm_name = Normalizer.normalize_name(data.get('name'))
+                    if norm_name: profile.full_name = norm_name
                 elif data.get('login'):
-                    profile.full_name = data.get('login')
+                    norm_name = Normalizer.normalize_name(data.get('login'))
+                    if norm_name: profile.full_name = norm_name
                 
                 if data.get('location'):
                     profile.location.city = data.get('location')

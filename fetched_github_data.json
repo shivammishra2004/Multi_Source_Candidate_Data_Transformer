@@ -20,12 +20,12 @@
     "years_experience": null,
     "skills": [
       {
-        "name": "c",
+        "name": "c++",
         "confidence": 0.9,
         "sources": []
       },
       {
-        "name": "c++",
+        "name": "c",
         "confidence": 0.9,
         "sources": []
       },
@@ -61,7 +61,12 @@
     "years_experience": null,
     "skills": [
       {
-        "name": "typescript",
+        "name": "python",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c",
         "confidence": 0.9,
         "sources": []
       },
@@ -71,12 +76,7 @@
         "sources": []
       },
       {
-        "name": "python",
-        "confidence": 0.9,
-        "sources": []
-      },
-      {
-        "name": "javascript",
+        "name": "typescript",
         "confidence": 0.9,
         "sources": []
       },
@@ -86,7 +86,7 @@
         "sources": []
       },
       {
-        "name": "c",
+        "name": "javascript",
         "confidence": 0.9,
         "sources": []
       }
@@ -122,12 +122,12 @@
         "sources": []
       },
       {
-        "name": "css",
+        "name": "javascript",
         "confidence": 0.9,
         "sources": []
       },
       {
-        "name": "javascript",
+        "name": "css",
         "confidence": 0.9,
         "sources": []
       }
@@ -163,6 +163,11 @@
         "sources": []
       },
       {
+        "name": "ruby",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
         "name": "javascript",
         "confidence": 0.9,
         "sources": []
@@ -174,11 +179,6 @@
       },
       {
         "name": "svelte",
-        "confidence": 0.9,
-        "sources": []
-      },
-      {
-        "name": "ruby",
         "confidence": 0.9,
         "sources": []
       }
@@ -241,6 +241,130 @@
         "sources": []
       }
     ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "TJ",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": null,
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/tj",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "company": "Apex",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "c",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "ruby",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "go",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "shell",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Kyle Simpson",
+    "emails": [
+      "getify@gmail.com"
+    ],
+    "phones": [],
+    "location": {
+      "city": "Austin, TX",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/getify",
+      "portfolio": "http://getify.me",
+      "other": []
+    },
+    "headline": "Kyle Simpson is a Human-Centric Technologist. He's fighting for the people behind the pixels.",
+    "company": "Getify Solutions",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "html",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "go",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c++",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "janedoe",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": null,
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/janedoe",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "company": null,
+    "years_experience": null,
+    "skills": [],
     "experience": [],
     "education": [],
     "provenance": [],
