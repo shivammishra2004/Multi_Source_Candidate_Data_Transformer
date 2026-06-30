@@ -40,6 +40,24 @@ class Normalizer:
         return email
 
     @staticmethod
+    def normalize_url(url: str) -> Optional[str]:
+        if not url:
+            return None
+        url = url.strip().lower()
+        # Remove trailing slash
+        if url.endswith('/'):
+            url = url[:-1]
+        # Remove schema
+        if url.startswith('https://'):
+            url = url[8:]
+        elif url.startswith('http://'):
+            url = url[7:]
+        # Remove www.
+        if url.startswith('www.'):
+            url = url[4:]
+        return url
+
+    @staticmethod
     def normalize_skills(skills: List[str]) -> Set[str]:
         """
         Takes a list of raw skill strings, lowercases them, 

@@ -14,6 +14,7 @@ class GitHubExtractor(BaseExtractor):
         super().__init__(trust_weight)
         self.file_path = file_path
         self.max_workers = max_workers
+        self.additional_urls: List[str] = []
 
     @property
     def source_name(self) -> str:
@@ -69,7 +70,9 @@ class GitHubExtractor(BaseExtractor):
                 if data.get('company'):
                     profile.company = data.get('company')
                 
-                profile.links.github = url
+                from ..normalizer import Normalizer
+                norm_github = Normalizer.normalize_url(url)
+                profile.links.github = norm_github if norm_github else url
                     
                 if data.get('bio'):
                     profile.headline = data.get('bio')
@@ -106,8 +109,19 @@ class GitHubExtractor(BaseExtractor):
     def extract(self) -> List[CanonicalProfile]:
         all_profiles = []
         try:
-            with open(self.file_path, mode='r', encoding='utf-8') as f:
-                urls = [line.strip() for line in f if line.strip()]
+            urls = []
+            if self.file_path and os.path.exists(self.file_path):
+                with open(self.file_path, mode='r', encoding='utf-8') as f:
+                    urls = [line.strip() for line in f if line.strip()]
+            
+            if hasattr(self, 'additional_urls') and self.additional_urls:
+                urls.extend(self.additional_urls)
+            
+            # Deduplicate urls
+            urls = list(set(urls))
+            
+            if not urls:
+                return all_profiles
                 
             with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 # Process URLs concurrently

@@ -41,6 +41,10 @@ class CSVExtractor(BaseExtractor):
                         norm_phone = Normalizer.format_phone(cleaned_row['phone'])
                         if norm_phone: profile.phones.append(norm_phone)
                         
+                    if 'github' in cleaned_row:
+                        norm_github = Normalizer.normalize_url(cleaned_row['github'])
+                        if norm_github: profile.links.github = norm_github
+                        
                     company = cleaned_row.get('current_company')
                     title = cleaned_row.get('title')
                     start = cleaned_row.get('start_date')

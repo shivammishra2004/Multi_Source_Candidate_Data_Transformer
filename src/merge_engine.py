@@ -31,6 +31,7 @@ class MergeEngine:
 
         # Start with the first source
         current_src_name, current_weight, current_profiles = sources_data[0]
+        current_profiles = self._deduplicate_list(current_profiles, current_src_name, current_weight)
         
         # Apply standalone provenance to the first source
         for p in current_profiles:
@@ -40,6 +41,8 @@ class MergeEngine:
 
         # Iteratively fold in other sources
         for next_src_name, next_weight, next_profiles in sources_data[1:]:
+            next_profiles = self._deduplicate_list(next_profiles, next_src_name, next_weight)
+            
             for p in next_profiles:
                 p.overall_confidence = next_weight
                 p.provenance = []
@@ -54,14 +57,71 @@ class MergeEngine:
             
         return current_profiles
 
+    def _deduplicate_list(self, profiles: List[CanonicalProfile], src_name: str, weight: float) -> List[CanonicalProfile]:
+        merged_no_email = []
+        map1: Dict[str, CanonicalProfile] = {}
+        github_map: Dict[str, CanonicalProfile] = {}
+        
+        for p in profiles:
+            matched = None
+            for email in p.emails:
+                norm_email = Normalizer.normalize_email(email)
+                if norm_email and norm_email in map1:
+                    matched = map1[norm_email]
+                    break
+            
+            if not matched and p.links.github:
+                norm_github = Normalizer.normalize_url(p.links.github)
+                if norm_github and norm_github in github_map:
+                    matched = github_map[norm_github]
+            
+            if matched:
+                new_merged = self._merge_two(matched, weight, src_name, p, weight, src_name)
+                for email in new_merged.emails:
+                    norm = Normalizer.normalize_email(email)
+                    if norm:
+                        map1[norm] = new_merged
+                if new_merged.links.github:
+                    norm_github = Normalizer.normalize_url(new_merged.links.github)
+                    if norm_github:
+                        github_map[norm_github] = new_merged
+            else:
+                has_key = False
+                for email in p.emails:
+                    norm = Normalizer.normalize_email(email)
+                    if norm:
+                        map1[norm] = p
+                        has_key = True
+                if p.links.github:
+                    norm_github = Normalizer.normalize_url(p.links.github)
+                    if norm_github:
+                        github_map[norm_github] = p
+                        has_key = True
+                if not has_key:
+                    merged_no_email.append(p)
+                    
+        unique_profiles = []
+        seen = set()
+        for p in list(map1.values()) + list(github_map.values()):
+            if id(p) not in seen:
+                seen.add(id(p))
+                unique_profiles.append(p)
+                
+        return unique_profiles + merged_no_email
+
     def _merge_profile_lists(self, list1: List[CanonicalProfile], list2: List[CanonicalProfile], 
                              src1_name: str, src2_name: str) -> List[CanonicalProfile]:
         map1: Dict[str, CanonicalProfile] = {}
+        github_map1: Dict[str, CanonicalProfile] = {}
         for p in list1:
             for email in p.emails:
                 norm_email = Normalizer.normalize_email(email)
                 if norm_email:
                     map1[norm_email] = p
+            if p.links.github:
+                norm_github = Normalizer.normalize_url(p.links.github)
+                if norm_github:
+                    github_map1[norm_github] = p
                     
         merged_profiles = []
         list1_processed_ids = set()
@@ -73,6 +133,11 @@ class MergeEngine:
                 if norm_email and norm_email in map1:
                     matched_p1 = map1[norm_email]
                     break
+                    
+            if not matched_p1 and p2.links.github:
+                norm_github = Normalizer.normalize_url(p2.links.github)
+                if norm_github and norm_github in github_map1:
+                    matched_p1 = github_map1[norm_github]
             
             if matched_p1:
                 w1 = getattr(matched_p1, 'overall_confidence', 1.0)

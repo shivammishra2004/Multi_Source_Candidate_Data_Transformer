@@ -6,6 +6,6 @@
     { "path": "skills", "from": "skills[].name", "type": "string[]", "normalize": "canonical" }
   ],
   "include_confidence": true,
-  "include_provenance": false,
+  "include_provenance": true,
   "on_missing": "null"
 }

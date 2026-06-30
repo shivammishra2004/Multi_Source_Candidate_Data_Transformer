@@ -1,0 +1,166 @@
+[
+  {
+    "candidate_id": "",
+    "full_name": "Hey",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": "Indonesia",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/janedoe-dev",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": "Code \u2022 Build \u2022 Repeat  \r\nPython & Automation Lover",
+    "company": null,
+    "years_experience": null,
+    "skills": [],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Michael Smith",
+    "emails": [
+      "msmith@tankteksoftware.com"
+    ],
+    "phones": [],
+    "location": {
+      "city": "Stuck in NeoVim",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/msmith-codes",
+      "portfolio": "https://www.msmith.codes/",
+      "other": []
+    },
+    "headline": "OS: Arch Linux | Editor: NeoVim | \r\nShell: Bash",
+    "company": "@TankTekSoftware || @GSRS ",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "java",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c++",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "lua",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "html",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "emptyRepo",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": null,
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/emptyrepo",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "company": null,
+    "years_experience": null,
+    "skills": [],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "R J",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": "India",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/ghostuser",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "company": null,
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "python",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c++",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "jupyter notebook",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "html",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  }
+]
