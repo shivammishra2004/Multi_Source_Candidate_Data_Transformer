@@ -1,0 +1,10 @@
+{
+  "alice.golden@gold.com": "https://github.com/alice-golden",
+  "bob.builds@construct.io": "https://github.com/bob-architect",
+  "minimal.edgy@edge.com": "https://github.com/minimal-edgy",
+  "empty.repos@void.com": "https://github.com/void-coder",
+  "zoe.oconnor@accent.com": "https://github.com/zoe-accent",
+  "rate.limit@error.com": "https://github.com/rate-limity-new",
+  "charlie@chap.com": "https://github.com/mismatch-charlie",
+  "deleted@nowhere.com": "https://github.com/deleted-user-404"
+}

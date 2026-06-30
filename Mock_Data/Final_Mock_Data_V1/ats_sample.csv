@@ -1,0 +1,9 @@
+name,email,phone,current_company,title
+Alice Golden,alice.golden@gold.com,555-000-1111,Golden Corp,Senior Staff Engineer
+Bob Builder,bob.builds@construct.io,555-000-2222,Construct IO,Principal Architect
+,minimal.edgy@edge.com,,,
+Empty Repos,empty.repos@void.com,555-000-4444,Void Co,Developer
+Zoë O'Connor ña,zoe.oconnor@accent.com,+354 555 1234,Accent OÜ,Data Scientist
+Rate Limity,rate.limit@error.com,555-000-6666,Error Corp,QA Engineer
+Charlie Chap,charlie@chap.com,555-000-7777,Chap Inc,Actor
+Deleted User,deleted@nowhere.com,555-000-8888,Nowhere,Ghost

@@ -1,10 +1,105 @@
 [
   {
     "candidate_id": "",
-    "full_name": "Empty Person",
-    "emails": [
-      "empty@nowhere.com"
+    "full_name": "Linus Torvalds",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": "Portland, OR",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/torvalds",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "company": "Linux Foundation",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "c",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c++",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "openscad",
+        "confidence": 0.9,
+        "sources": []
+      }
     ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Guido van Rossum",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": "San Francisco Bay Area",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/gvanrossum",
+      "portfolio": "https://python.org/~guido/",
+      "other": []
+    },
+    "headline": null,
+    "company": "Microsoft",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "typescript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "html",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "python",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c++",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "c",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Brendan Eich",
+    "emails": [],
     "phones": [],
     "location": {
       "city": null,
@@ -13,7 +108,99 @@
     },
     "links": {
       "linkedin": null,
-      "github": "github.com/emptyrepo",
+      "github": "github.com/brendaneich",
+      "portfolio": "https://www.brendaneich.com/",
+      "other": []
+    },
+    "headline": "Founder & CEO, Brave Software. Created JavaScript. Co-founded Mozilla and Firefox.",
+    "company": "@brave ",
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "html",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "css",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Vercel",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": null,
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/vercel",
+      "portfolio": "https://vercel.com",
+      "other": []
+    },
+    "headline": "Agentic infrastructure for every app and agent.",
+    "company": null,
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "typescript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "javascript",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "go",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "svelte",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "ruby",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "provenance": [],
+    "overall_confidence": 0.0
+  },
+  {
+    "candidate_id": "",
+    "full_name": "github-actions[bot]",
+    "emails": [],
+    "phones": [],
+    "location": {
+      "city": null,
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": null,
+      "github": "github.com/github-actions%5bbot%5d",
       "portfolio": null,
       "other": []
     },
@@ -28,9 +215,9 @@
   },
   {
     "candidate_id": "",
-    "full_name": "Jane Doe",
+    "full_name": "Sindre Sorhus",
     "emails": [
-      "jane.doe@gmail.com"
+      "sindresorhus@gmail.com"
     ],
     "phones": [],
     "location": {
@@ -40,57 +227,16 @@
     },
     "links": {
       "linkedin": null,
-      "github": "github.com/janedoe-dev",
-      "portfolio": null,
+      "github": "github.com/sindresorhus",
+      "portfolio": "https://sindresorhus.com/apps",
       "other": []
     },
-    "headline": "Senior Software Engineer | TechCorp",
+    "headline": "Full-Time Open-Sourcerer. Focused on Swift & JavaScript. Makes macOS apps, CLI tools, npm packages.",
     "company": null,
     "years_experience": null,
     "skills": [
       {
         "name": "javascript",
-        "confidence": 0.9,
-        "sources": []
-      },
-      {
-        "name": "go",
-        "confidence": 0.9,
-        "sources": []
-      },
-      {
-        "name": "python",
-        "confidence": 0.9,
-        "sources": []
-      }
-    ],
-    "experience": [],
-    "education": [],
-    "provenance": [],
-    "overall_confidence": 0.0
-  },
-  {
-    "candidate_id": "",
-    "full_name": "John Smith",
-    "emails": [],
-    "phones": [],
-    "location": {
-      "city": null,
-      "region": null,
-      "country": null
-    },
-    "links": {
-      "linkedin": null,
-      "github": "github.com/msmith-codes",
-      "portfolio": null,
-      "other": []
-    },
-    "headline": null,
-    "company": null,
-    "years_experience": null,
-    "skills": [
-      {
-        "name": "python",
         "confidence": 0.9,
         "sources": []
       }

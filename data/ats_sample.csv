@@ -1,7 +1,8 @@
 name,email,phone,current_company,title
-Jane Doe,jane.doe@gmail.com,555-123-4567,TechCorp,Senior Engineer
-Jane Doe,jane.doe@gmail.com,+1 (555) 123-4567,TechCorp,Senior Engineer
-John Smith,JOHN.SMITH@outlook.com,,DataWorks Inc,Product Manager
-,,,,
-Maria Garcia,maria.garcia@startup.io,+91 98765 43210,CloudNine,Backend Developer
-Unknown Person,,1234,Some Co,Intern
+Linus Torvalds,torvalds@linux-foundation.org,555-999-0001,Linux Foundation,Creator
+Guido van Rossum,guido@python.org,555-999-0002,Microsoft,Distinguished Engineer
+Brendan Eich,brendan@brave.com,555-999-0003,Brave Software,CEO
+Vercel Org,contact@vercel.com,555-000-0004,Vercel,Organization Edge Case
+Missing User,ghost@nowhere.com,555-000-0005,Nowhere,404 Edge Case
+GitHub Actions Bot,actions@github.com,555-000-0006,GitHub,Bot Edge Case
+Sindre Sorhus,sindresorhus@gmail.com,555-000-0007,Open Source,Prolific Edge Case

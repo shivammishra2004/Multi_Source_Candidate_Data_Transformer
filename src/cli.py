@@ -115,7 +115,7 @@ def main():
     final_output = projector.project(canonical_profiles)
     
     # Output
-    json_str = json.dumps(final_output, indent=2)
+    json_str = json.dumps(final_output, indent=2, ensure_ascii=False)
     if args.output:
         with open(args.output, 'w', encoding='utf-8') as f:
             f.write(json_str)

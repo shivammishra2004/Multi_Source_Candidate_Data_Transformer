@@ -48,20 +48,22 @@ class GitHubExtractor(BaseExtractor):
                     login = parts[-2] if parts[-1] == "repos" else parts[-1]
                     entry = mock_data.get(login)
                     
+                    class FakeResponse:
+                        def __init__(self, status_code, payload):
+                            self.status_code = status_code
+                            self._payload = payload
+                            self.headers = {"X-RateLimit-Remaining": "0"} if status_code == 403 else {}
+                        def json(self):
+                            return self._payload
+
                     if entry is not None:
-                        class FakeResponse:
-                            def __init__(self, status_code, payload):
-                                self.status_code = status_code
-                                self._payload = payload
-                                self.headers = {"X-RateLimit-Remaining": "0"} if status_code == 403 else {}
-                            def json(self):
-                                return self._payload
-                        
                         if "status_code" in entry:
                             return FakeResponse(entry["status_code"], {"message": entry.get("error", "error")})
                         if parts[-1] == "repos":
                             return FakeResponse(200, entry.get("repos", []))
                         return FakeResponse(200, entry.get("profile", entry))
+                    else:
+                        return FakeResponse(404, {"message": "Not Found (Mocked)"})
                         
                 return requests.get(req_url, **kwargs)
                 
@@ -106,7 +108,7 @@ class GitHubExtractor(BaseExtractor):
                     profile.headline = data.get('bio')
                 
                 # Fetch repos to extract skills (languages)
-                repos_url = data.get('repos_url')
+                repos_url = data.get('repos_url', f"https://api.github.com/users/{username}/repos")
                 if repos_url:
                     repos_response = _http_get(repos_url, headers=headers, timeout=10)
                     if repos_response.status_code == 403:
@@ -145,8 +147,16 @@ class GitHubExtractor(BaseExtractor):
             if hasattr(self, 'additional_urls') and self.additional_urls:
                 urls.extend(self.additional_urls)
             
-            # Deduplicate urls
-            urls = list(set(urls))
+            # Deduplicate urls by username
+            unique_urls = []
+            seen_usernames = set()
+            for u in urls:
+                if not u.strip(): continue
+                username = u.strip().rstrip('/').split('/')[-1]
+                if username not in seen_usernames:
+                    seen_usernames.add(username)
+                    unique_urls.append(u)
+            urls = unique_urls
             
             if not urls:
                 return all_profiles

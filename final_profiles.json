@@ -1,207 +1,76 @@
 {
   "candidates": [
     {
-      "full_name": "Michael Smith",
-      "primary_email": "msmith@tankteksoftware.com",
-      "phone": null,
+      "full_name": "Sindre Sorhus",
+      "primary_email": "sindresorhus@gmail.com",
+      "phone": "+15550000007",
       "skills": [
-        "java",
-        "c++",
-        "lua",
-        "javascript",
-        "c",
-        "html"
+        "javascript"
       ],
-      "overall_confidence": 0.9,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "headline",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "location",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "emails",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "skills",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        }
-      ]
+      "overall_confidence": 0.7666666666666666
     },
     {
-      "full_name": "Hey",
-      "primary_email": null,
-      "phone": null,
-      "skills": null,
-      "overall_confidence": 0.9,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "headline",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        },
-        {
-          "field": "location",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        }
-      ]
-    },
-    {
-      "full_name": "emptyRepo",
-      "primary_email": null,
-      "phone": null,
-      "skills": null,
-      "overall_confidence": 0.9,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "GitHub",
-          "method": "standalone",
-          "confidence": 0.9
-        }
-      ]
-    },
-    {
-      "full_name": "R J",
-      "primary_email": "maria.garcia@startup.io",
-      "phone": "+919876543210",
+      "full_name": "Linus Torvalds",
+      "primary_email": "torvalds@linux-foundation.org",
+      "phone": "+15559990001",
       "skills": [
+        "c",
+        "c++",
+        "openscad"
+      ],
+      "overall_confidence": 0.9
+    },
+    {
+      "full_name": "Guido van Rossum",
+      "primary_email": "guido@python.org",
+      "phone": "+15559990002",
+      "skills": [
+        "typescript",
+        "html",
         "python",
-        "c++",
-        "jupyter notebook",
         "javascript",
-        "c",
-        "html"
+        "c++",
+        "c"
       ],
-      "overall_confidence": 0.7166666666666666,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "GitHub",
-          "method": "weight_resolution",
-          "confidence": 0.9
-        },
-        {
-          "field": "company",
-          "source": "CSV",
-          "method": "weight_fallback",
-          "confidence": 0.5
-        },
-        {
-          "field": "location",
-          "source": "GitHub",
-          "method": "weight_fallback",
-          "confidence": 0.9
-        },
-        {
-          "field": "emails",
-          "source": "CSV,GitHub",
-          "method": "set_union",
-          "confidence": 0.9
-        },
-        {
-          "field": "phones",
-          "source": "CSV,GitHub",
-          "method": "set_union",
-          "confidence": 0.9
-        },
-        {
-          "field": "skills",
-          "source": "CSV,GitHub",
-          "method": "set_union",
-          "confidence": 0.9
-        }
-      ]
+      "overall_confidence": 0.9
     },
     {
-      "full_name": "Jane Doe",
-      "primary_email": "jane.doe@gmail.com",
-      "phone": "+15551234567",
-      "skills": null,
-      "overall_confidence": 0.5,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        },
-        {
-          "field": "emails",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        },
-        {
-          "field": "phones",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        }
-      ]
+      "full_name": "Brendan Eich",
+      "primary_email": "brendan@brave.com",
+      "phone": "+15559990003",
+      "skills": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "overall_confidence": 0.85
     },
     {
-      "full_name": "John Smith",
-      "primary_email": "john.smith@outlook.com",
-      "phone": null,
-      "skills": null,
-      "overall_confidence": 0.5,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        },
-        {
-          "field": "emails",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        }
-      ]
+      "full_name": "Vercel",
+      "primary_email": "contact@vercel.com",
+      "phone": "+15550000004",
+      "skills": [
+        "typescript",
+        "javascript",
+        "go",
+        "svelte",
+        "ruby"
+      ],
+      "overall_confidence": 0.7166666666666666
     },
     {
-      "full_name": "Unknown Person",
-      "primary_email": null,
-      "phone": null,
+      "full_name": "github-actions[bot]",
+      "primary_email": "actions@github.com",
+      "phone": "+15550000006",
       "skills": null,
-      "overall_confidence": 0.5,
-      "provenance": [
-        {
-          "field": "full_name",
-          "source": "CSV",
-          "method": "standalone",
-          "confidence": 0.5
-        }
-      ]
+      "overall_confidence": 0.6499999999999999
+    },
+    {
+      "full_name": "Missing User",
+      "primary_email": "ghost@nowhere.com",
+      "phone": "+15550000005",
+      "skills": null,
+      "overall_confidence": 0.5
     }
   ]
 }

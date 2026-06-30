@@ -1,45 +1,191 @@
 {
-  "janedoe-dev": {
+  "alice-golden": {
     "profile": {
-      "login": "janedoe-dev",
-      "name": "Jane Doe",
-      "email": "jane.doe@gmail.com",
-      "bio": "Senior Software Engineer | TechCorp",
-      "repos_url": "https://api.github.com/users/janedoe-dev/repos"
+      "login": "alice-golden",
+      "name": "Alice Golden",
+      "email": "alice.golden@gold.com",
+      "bio": "Building the future of gold.",
+      "company": "Golden Corp",
+      "blog": "https://alicegolden.dev",
+      "location": "San Francisco, CA",
+      "type": "User"
     },
     "repos": [
-      {"language": "Python"},
-      {"language": "Go"},
-      {"language": "JavaScript"},
-      {"language": null}
+      {
+        "name": "gold-miner",
+        "language": "Go"
+      },
+      {
+        "name": "shiny-app",
+        "language": "TypeScript"
+      }
     ]
   },
-  "msmith-codes": {
+  "bob-architect": {
     "profile": {
-      "login": "msmith-codes",
-      "name": "John Smith",
+      "login": "bob-architect",
+      "name": "Bob B.",
+      "email": "bob@construct.io",
+      "bio": "Architecting big things.",
+      "company": "@construct-io",
+      "blog": "https://bob.io",
+      "location": "New York, NY",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "hammer",
+        "language": "Rust"
+      },
+      {
+        "name": "nail",
+        "language": "Rust"
+      },
+      {
+        "name": "blueprint",
+        "language": "Python"
+      }
+    ]
+  },
+  "minimal-edgy": {
+    "profile": {
+      "login": "minimal-edgy",
+      "name": null,
       "email": null,
-      "repos_url": "https://api.github.com/users/msmith-codes/repos"
+      "bio": null,
+      "company": null,
+      "blog": null,
+      "location": null,
+      "type": "User"
     },
     "repos": [
-      {"language": "Python"}
+      {
+        "name": "just-one-repo",
+        "language": null
+      }
     ]
   },
-  "ghostuser": {
-    "status_code": 404,
-    "error": "Not Found"
+  "void-coder": {
+    "profile": {
+      "login": "void-coder",
+      "name": "Empty Repos",
+      "email": "empty.repos@void.com",
+      "bio": "I don't push code.",
+      "company": "Void Co",
+      "blog": "",
+      "location": "Space",
+      "type": "User"
+    },
+    "repos": []
   },
-  "ratelimited-user": {
+  "zoe-accent": {
+    "profile": {
+      "login": "zoe-accent",
+      "name": "Zo\u00eb O'Connor \u00f1a",
+      "email": "zoe.oconnor@accent.com",
+      "bio": "I \u2764\ufe0f data & unicode! \ud83d\udc69\u200d\ud83d\udcbb\u2728",
+      "company": "Accent O\u00dc",
+      "blog": "https://zo\u00eb.com",
+      "location": "Reykjav\u00edk, Iceland",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "data-\u00e6\u00f8\u00e5",
+        "language": "Python"
+      },
+      {
+        "name": "emoji-lang",
+        "language": "Julia"
+      }
+    ]
+  },
+  "rate-limity-new": {
     "status_code": 403,
     "error": "API rate limit exceeded"
   },
-  "emptyrepo": {
+  "mismatch-charlie": {
     "profile": {
-      "login": "emptyrepo",
-      "name": "Empty Person",
-      "email": "empty@nowhere.com",
-      "repos_url": "https://api.github.com/users/emptyrepo/repos"
+      "login": "mismatch-charlie",
+      "name": "David Doe",
+      "email": "david.doe@different.com",
+      "bio": "Actor?",
+      "company": "Another Inc",
+      "blog": "https://david.dev",
+      "location": "LA",
+      "type": "User"
     },
-    "repos": []
+    "repos": [
+      {
+        "name": "acting-scripts",
+        "language": "Ruby"
+      }
+    ]
+  },
+  "deleted-user-404": {
+    "status_code": 404,
+    "error": "Not Found"
+  },
+  "torvalds": {
+    "profile": {
+      "login": "torvalds",
+      "name": "Linus Torvalds",
+      "email": "torvalds@linux-foundation.org",
+      "bio": "Linux Kernel Developer",
+      "company": "Linux Foundation",
+      "blog": "",
+      "location": "Portland, OR",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "linux",
+        "language": "C"
+      },
+      {
+        "name": "pesconvert",
+        "language": "C"
+      }
+    ]
+  },
+  "gvanrossum": {
+    "profile": {
+      "login": "gvanrossum",
+      "name": "Guido van Rossum",
+      "email": "guido@python.org",
+      "bio": "Creator of Python",
+      "company": "Microsoft",
+      "blog": "https://gvanrossum.github.io",
+      "location": "Belmont, CA",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "mypy",
+        "language": "Python"
+      },
+      {
+        "name": "cpython",
+        "language": "C"
+      }
+    ]
+  },
+  "brendaneich": {
+    "profile": {
+      "login": "brendaneich",
+      "name": "Brendan Eich",
+      "email": "brendan@brave.com",
+      "bio": "Creator of JavaScript",
+      "company": "Brave Software",
+      "blog": "https://brendaneich.com",
+      "location": "California",
+      "type": "User"
+    },
+    "repos": [
+      {
+        "name": "brave-browser",
+        "language": "JavaScript"
+      }
+    ]
   }
 }
