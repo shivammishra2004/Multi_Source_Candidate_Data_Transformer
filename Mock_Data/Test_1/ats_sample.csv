@@ -1,0 +1,5 @@
+name,email,phone,current_company,title,skills
+Alice Engineer,alice@example.com,(415) 555-0198,TechCorp,Backend Engineer,"Python, SQL, AWS"
+Alice Engineer,ALICE@example.com,415.555.0198,TechCorp Inc,Senior Engineer,"Go, Docker, Python"
+Bob Ghost,,,,,
+Chris Partial,chris.p@example.com,,,Developer,"JavaScript, React"

@@ -1,0 +1,246 @@
+[
+  {
+    "candidate_id": "",
+    "full_name": "The Octocat",
+    "primary_email": "octocat@github.com",
+    "skills": [
+      {
+        "name": "HTML",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "Ruby",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "CSS",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "github_url": "https://github.com/octocat",
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      },
+      {
+        "field": "location",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      },
+      {
+        "field": "emails",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      },
+      {
+        "field": "skills",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      }
+    ],
+    "overall_confidence": 0.9
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Linus Torvalds",
+    "skills": [
+      {
+        "name": "OpenSCAD",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "C",
+        "confidence": 0.9,
+        "sources": []
+      },
+      {
+        "name": "C++",
+        "confidence": 0.9,
+        "sources": []
+      }
+    ],
+    "github_url": "https://github.com/torvalds",
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      },
+      {
+        "field": "location",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      },
+      {
+        "field": "skills",
+        "source": "CSV",
+        "method": "standalone",
+        "confidence": 0.9
+      }
+    ],
+    "overall_confidence": 0.9
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Alice Engineer",
+    "primary_email": "alice@example.com",
+    "primary_phone": "+14155550198",
+    "skills": [
+      {
+        "name": "python",
+        "confidence": 0.5,
+        "sources": []
+      },
+      {
+        "name": "sql",
+        "confidence": 0.5,
+        "sources": []
+      },
+      {
+        "name": "aws",
+        "confidence": 0.5,
+        "sources": []
+      }
+    ],
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "emails",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "phones",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "skills",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      }
+    ],
+    "overall_confidence": 0.5
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Alice Engineer",
+    "primary_email": "alice@example.com",
+    "primary_phone": "+14155550198",
+    "skills": [
+      {
+        "name": "docker",
+        "confidence": 0.5,
+        "sources": []
+      },
+      {
+        "name": "go",
+        "confidence": 0.5,
+        "sources": []
+      },
+      {
+        "name": "python",
+        "confidence": 0.5,
+        "sources": []
+      }
+    ],
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "emails",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "phones",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "skills",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      }
+    ],
+    "overall_confidence": 0.5
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Bob Ghost",
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      }
+    ],
+    "overall_confidence": 0.5
+  },
+  {
+    "candidate_id": "",
+    "full_name": "Chris Partial",
+    "primary_email": "chris.p@example.com",
+    "skills": [
+      {
+        "name": "javascript",
+        "confidence": 0.5,
+        "sources": []
+      },
+      {
+        "name": "react",
+        "confidence": 0.5,
+        "sources": []
+      }
+    ],
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "emails",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      },
+      {
+        "field": "skills",
+        "source": "GitHub",
+        "method": "standalone",
+        "confidence": 0.5
+      }
+    ],
+    "overall_confidence": 0.5
+  }
+]
