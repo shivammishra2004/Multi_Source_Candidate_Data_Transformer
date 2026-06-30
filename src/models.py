@@ -51,6 +51,7 @@ class CanonicalProfile:
     location: Location = field(default_factory=Location)
     links: Links = field(default_factory=Links)
     headline: Optional[str] = None
+    company: Optional[str] = None
     years_experience: Optional[float] = None
     skills: List[Skill] = field(default_factory=list)
     experience: List[Experience] = field(default_factory=list)

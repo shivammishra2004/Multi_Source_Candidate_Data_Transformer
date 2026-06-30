@@ -44,6 +44,9 @@ class CSVExtractor(BaseExtractor):
                     start = cleaned_row.get('start_date')
                     end = cleaned_row.get('end_date')
                     
+                    if company:
+                        profile.company = company
+                        
                     if company or title:
                         start_norm = Normalizer.normalize_date(start) if start else None
                         end_norm = Normalizer.normalize_date(end) if end else None

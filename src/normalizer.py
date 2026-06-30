@@ -10,30 +10,25 @@ class Normalizer:
     @staticmethod
     def format_phone(phone: str) -> Optional[str]:
         """
-        Step 1: Sanitize. Strip out all spaces, dashes, parentheses, and letters.
-        Step 2: Check for the '+'. If it was at the beginning, keep it.
-        Step 3: If no '+' and exactly 10 digits, assume standard US/IN (+1/+91).
-                We will default to US (+1) as requested.
+        Formats phone numbers into E.164 using the phonenumbers library.
+        Defaults to US (+1) for parsing if no country code is specified.
         """
         if not phone:
             return None
-        
-        has_plus = phone.strip().startswith('+')
-        # Strip everything that is not a digit
-        digits = re.sub(r'\D', '', phone)
-        
-        if not digits:
-            return None
             
-        if has_plus:
-            return f"+{digits}"
-        
-        if len(digits) == 10:
-            # Assumption: 10 digit numbers without a country code are US numbers (+1)
-            logger.debug(f"Normalizer: Assuming +1 for 10-digit number {phone}")
-            return f"+1{digits}"
+        try:
+            import phonenumbers
+            # Parse with US region as default for numbers without a country code
+            parsed = phonenumbers.parse(phone, "US")
             
-        return digits
+            # For 7 digit numbers, is_possible_number is true but is_valid_number might be false
+            # without an area code. For ATS we want valid, callable E.164 numbers.
+            if phonenumbers.is_valid_number(parsed):
+                return phonenumbers.format_number(parsed, phonenumbers.PhoneNumberFormat.E164)
+        except Exception as e:
+            logger.debug(f"Normalizer: Failed to parse phone number '{phone}': {e}")
+            
+        return None
 
     @staticmethod
     def normalize_email(email: str) -> Optional[str]:

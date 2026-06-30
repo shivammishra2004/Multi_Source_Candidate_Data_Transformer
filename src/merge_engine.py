@@ -122,6 +122,7 @@ class MergeEngine:
         merge_scalar('candidate_id')
         merge_scalar('full_name')
         merge_scalar('headline')
+        merge_scalar('company')
         merge_scalar('years_experience')
 
         # LOCATION (pseudo-scalar object)

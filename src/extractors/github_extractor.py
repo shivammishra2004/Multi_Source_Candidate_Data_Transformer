@@ -66,6 +66,9 @@ class GitHubExtractor(BaseExtractor):
                 if data.get('blog'):
                     profile.links.portfolio = data.get('blog')
                 
+                if data.get('company'):
+                    profile.company = data.get('company')
+                
                 profile.links.github = url
                     
                 if data.get('bio'):

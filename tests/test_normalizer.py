@@ -3,7 +3,7 @@ from src.normalizer import Normalizer
 def test_format_phone_strips_uk_punctuation():
     # 1. ARRANGE
     raw_phone = "+44 (0) 7911-123456"
-    expected_output = "+4407911123456" # based on digits extraction rule
+    expected_output = "+447911123456" # (0) should be stripped
     
     # 2. ACT
     actual_output = Normalizer.format_phone(raw_phone)

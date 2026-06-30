@@ -1,0 +1,4 @@
+name,email,phone,current_company,title,skills
+Sarah Chen,s.chen@fictional.io,+44 (0) 7911-123456,TechCorp,Backend Lead,"Python, AWS, Postgres"
+Mike Lee,mike.lee@fictional.io,415.555.0199,Startup Inc,Dev,"React, TypeScript"
+Elena Typo,elna.t@fictional.io,555-0100,DesignCo,UI/UX,"Figma, CSS"
