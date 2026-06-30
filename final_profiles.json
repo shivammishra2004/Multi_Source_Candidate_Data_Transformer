@@ -1,113 +1,144 @@
 {
   "candidates": [
     {
-      "full_name": "Sindre Sorhus",
-      "primary_email": "sindresorhus@gmail.com",
-      "phone": "+15550000007",
+      "full_name": "Sarah Jenkins",
+      "primary_email": "sarah.miller@university.edu",
+      "phone": "+15551234567",
       "skills": [
-        "javascript"
+        "typescript"
       ],
-      "overall_confidence": 0.7
+      "overall_confidence": 0.8
     },
     {
-      "full_name": "KyLe Simpson",
-      "primary_email": "kyle@getify.me",
-      "phone": null,
+      "full_name": "David Kim Jr.",
+      "primary_email": "david.kim@enterprise.com",
+      "phone": "+18005550199",
       "skills": [
-        "html",
-        "go",
-        "javascript",
-        "c++"
+        "java",
+        "go"
+      ],
+      "overall_confidence": 0.6666666666666666
+    },
+    {
+      "full_name": "JÃ©rÃ´me Dubois",
+      "primary_email": "jerome.dubois@company.fr",
+      "phone": "+10123456789",
+      "skills": [
+        "python"
       ],
       "overall_confidence": 0.7499999999999999
     },
     {
-      "full_name": "Linus Torvalds",
-      "primary_email": "torvalds@linux-foundation.org",
-      "phone": "+15559990001",
+      "full_name": "Alice Golden",
+      "primary_email": "alice.golden@gold.com",
+      "phone": "+15550001111",
       "skills": [
-        "c++",
-        "c",
-        "openscad"
+        "typescript",
+        "go"
       ],
-      "overall_confidence": 0.7666666666666666
+      "overall_confidence": 0.7499999999999999
     },
     {
-      "full_name": "Guido van Rossum",
-      "primary_email": "guido@python.org",
-      "phone": "+5559990002",
+      "full_name": "Bob Builder",
+      "primary_email": "bob.builds@construct.io",
+      "phone": null,
       "skills": [
         "python",
-        "c",
-        "html",
-        "typescript",
-        "c++",
-        "javascript"
+        "rust"
       ],
-      "overall_confidence": 0.7666666666666666
+      "overall_confidence": 0.7
     },
     {
-      "full_name": "Brendan Eich",
-      "primary_email": "brendan@brave.com",
-      "phone": "+15559990003",
-      "skills": [
-        "html",
-        "javascript",
-        "css"
-      ],
-      "overall_confidence": 0.7166666666666666
-    },
-    {
-      "full_name": "Vercel Org",
-      "primary_email": "contact@vercel.com",
-      "phone": "+15550000004",
-      "skills": [
-        "typescript",
-        "ruby",
-        "javascript",
-        "go",
-        "svelte"
-      ],
-      "overall_confidence": 0.5833333333333333
-    },
-    {
-      "full_name": "github-actions[bot]",
-      "primary_email": "actions@github.com",
-      "phone": "+15550000006",
+      "full_name": "Empty Repos",
+      "primary_email": "empty.repos@void.com",
+      "phone": "+15550004444",
       "skills": null,
-      "overall_confidence": 0.6499999999999999
+      "overall_confidence": 0.7999999999999999
     },
     {
-      "full_name": "T.J HolowayChuk",
-      "primary_email": "tj@apex.sh",
-      "phone": "+15551112222",
+      "full_name": "Zoë O'Connor ña",
+      "primary_email": "zoe.oconnor@accent.com",
+      "phone": "+3545551234",
       "skills": [
-        "c",
-        "ruby",
-        "javascript",
-        "go",
-        "shell"
+        "python",
+        "julia"
       ],
-      "overall_confidence": 0.6499999999999999
+      "overall_confidence": 0.7999999999999999
     },
     {
-      "full_name": "Jane Doe",
-      "primary_email": "jane.work@company.com",
-      "phone": "+15550198",
-      "skills": null,
+      "full_name": "Charlie Chap",
+      "primary_email": "charlie@chap.com",
+      "phone": "+15550007777",
+      "skills": [
+        "ruby"
+      ],
+      "overall_confidence": 0.7
+    },
+    {
+      "full_name": "Mona Lisa",
+      "primary_email": "mona@github.com",
+      "phone": null,
+      "skills": [
+        "javascript",
+        "ruby"
+      ],
+      "overall_confidence": 0.9
+    },
+    {
+      "full_name": "Alex Rivera",
+      "primary_email": "alex.r@startup.io",
+      "phone": null,
+      "skills": [
+        "rust"
+      ],
       "overall_confidence": 0.45
     },
     {
-      "full_name": "Missing User",
-      "primary_email": "ghost@nowhere.com",
-      "phone": "+15550000005",
+      "full_name": "minimal-edgy",
+      "primary_email": "minimal.edgy@edge.com",
+      "phone": null,
+      "skills": null,
+      "overall_confidence": 0.9
+    },
+    {
+      "full_name": "Priya Patel",
+      "primary_email": "priya@dev.com",
+      "phone": "+15550198888",
       "skills": null,
       "overall_confidence": 0.5
     },
     {
-      "full_name": "John Smith",
+      "full_name": "Rate Limity",
+      "primary_email": "rate.limit@error.com",
+      "phone": "+15550006666",
+      "skills": null,
+      "overall_confidence": 0.5
+    },
+    {
+      "full_name": "Deleted User",
+      "primary_email": "deleted@nowhere.com",
+      "phone": "+15550008888",
+      "skills": null,
+      "overall_confidence": 0.5
+    },
+    {
+      "full_name": "Frankenstein",
+      "primary_email": "frank.monster@gmail.com",
+      "phone": "+11234567890",
+      "skills": null,
+      "overall_confidence": 0.5
+    },
+    {
+      "full_name": "Unlinked Dave",
+      "primary_email": "dave.work@gmail.com",
+      "phone": "+15559990000",
+      "skills": null,
+      "overall_confidence": 0.5
+    },
+    {
+      "full_name": "No Email User",
       "primary_email": null,
-      "phone": "+15550100",
+      "phone": null,
       "skills": null,
       "overall_confidence": 0.5
     }

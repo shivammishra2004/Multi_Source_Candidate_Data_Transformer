@@ -11,6 +11,17 @@ A deterministic, rule-based data pipeline that ingests messy candidate data from
 pip install requests phonenumbers python-dotenv
 ```
 
+## Configuration (Environment Variables)
+
+To avoid aggressive rate-limiting by the GitHub API when not using mock data, you should configure a GitHub Personal Access Token.
+
+1. Create a `.env` file in the root of the project.
+2. Add your token to the file:
+```env
+GITHUB_TOKEN=your_personal_access_token_here
+```
+The `python-dotenv` package will automatically load this token when the pipeline runs.
+
 ## How to Run the Pipeline
 
 The pipeline is executed via a Command Line Interface (CLI). You must run the tool as a Python module from the root directory of the project.

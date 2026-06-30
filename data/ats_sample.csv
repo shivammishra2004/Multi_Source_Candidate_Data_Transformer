@@ -1,9 +1,17 @@
 name,email,phone,current_company,title
-Alice Golden,alice.golden@gold.com,555-000-1111,Golden Corp,Senior Staff Engineer
-Bob Builder,bob.builds@construct.io,555-000-2222,Construct IO,Principal Architect
-,minimal.edgy@edge.com,,,
-Empty Repos,empty.repos@void.com,555-000-4444,Void Co,Developer
-Zoë O'Connor ña,zoe.oconnor@accent.com,+354 555 1234,Accent OÜ,Data Scientist
-Rate Limity,rate.limit@error.com,555-000-6666,Error Corp,QA Engineer
-Charlie Chap,charlie@chap.com,555-000-7777,Chap Inc,Actor
-Deleted User,deleted@nowhere.com,555-000-8888,Nowhere,Ghost
+Sarah Miller,sarah.miller@university.edu,+1 (555) 123-4567,University Lab,Student
+David Kim Jr.,david.kim@enterprise.com,800.555.0199 x402,Enterprise Corp,VP of Engineering
+Alex Rivera,alex.r@startup.io,,,
+JÃ©rÃ´me Dubois,jerome.dubois@company.fr,01 23 45 67 89,Company FR,Backend Dev
+Priya Patel,priya@dev.com,555-019-8888,Dev Com,Frontend
+  Alice Golden   ,  ALICE.Golden@gold.com  , +1 (555) 000-1111  , Golden Corp.  , Senior Staff Engineer
+Bob Builder , bob.builds@construct.io , 5550009999992222, Construct IO, Principal Architect
+   ,  minimal.edgy@edge.com , , ,
+  Empty Repos, empty.repos@void.com, 555-000-4444 , Void Co , Developer 
+Zoë O'Connor ña, ZOE.oconnor@accent.com , +354 555 1234, Accent OÜ , Data Scientist
+Rate Limity,rate.limit@error.com, 555-000-6666, Error Corp, QA Engineer
+ Charlie Chap , charlie@chap.com, 5550007777 , Chap Inc, Actor
+ Deleted User, deleted@nowhere.com, 555-000-8888 , Nowhere , Ghost
+  Frankenstein , frank.monster@gmail.com , 123-456-7890 , Monster Inc , Monster 
+No Email User , , 12 , Crappy Corp, 
+Unlinked Dave,dave.work@gmail.com,555-999-0000,Unlinked Inc,Manager

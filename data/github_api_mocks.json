@@ -105,5 +105,102 @@
   "deleted-user-404": {
     "status_code": 404,
     "error": "Not Found"
+  },
+    "sarah-jenkins-dev": {
+    "profile": {
+      "login": "sarah-jenkins-dev",
+      "name": "Sarah Jenkins",
+      "email": "sarah.jenkins@techcorp.com",
+      "bio": "Senior Dev at TechCorp",
+      "company": "TechCorp",
+      "blog": "https://sarahjenkins.dev",
+      "location": "Seattle, WA",
+      "type": "User"
+    },
+    "repos": [
+      {"name": "react-components", "language": "TypeScript"},
+      {"name": "graphql-api", "language": "TypeScript"}
+    ]
+  },
+  "david-kim-eng": {
+    "profile": {
+      "login": "david-kim-eng",
+      "name": "David Kim",
+      "email": "david.kim@enterprise.com",
+      "bio": "",
+      "company": "@EnterpriseCorp",
+      "blog": "",
+      "location": "Austin, TX",
+      "type": "User"
+    },
+    "repos": [
+      {"name": "legacy-system", "language": "Java"},
+      {"name": "microservices", "language": "Go"}
+    ]
+  },
+  "alex-r-code": {
+    "profile": {
+      "login": "alex-r-code",
+      "name": "Alex R",
+      "email": null,
+      "bio": null,
+      "company": null,
+      "blog": null,
+      "location": null,
+      "type": "User"
+    },
+    "repos": [
+      {"name": "stealth-project", "language": "Rust"}
+    ]
+  },
+  "jdubois-fr": {
+    "profile": {
+      "login": "jdubois-fr",
+      "name": "Jérôme Dubois",
+      "email": "jerome.dubois@company.fr",
+      "bio": "Backend architecture",
+      "company": "Company FR",
+      "blog": "https://jdubois.fr",
+      "location": "Paris, France",
+      "type": "User"
+    },
+    "repos": [
+      {"name": "distributed-cache", "language": "Python"}
+    ]
+  },
+  "priya-old-handle": {
+    "status_code": 404,
+    "error": "Not Found"
+  },
+  "dave-unlinked": {
+    "profile": {
+      "login": "dave-unlinked",
+      "name": "David Unlinked",
+      "email": "dave.personal@gmail.com",
+      "bio": "I am unlinked.",
+      "company": "Personal Project",
+      "blog": "https://dave.xyz",
+      "location": "Boston, MA",
+      "type": "User"
+    },
+    "repos": [
+      {"name": "cool-project", "language": "Ruby"}
+    ]
+  },
+  "octocat-only": {
+    "profile": {
+      "login": "octocat-only",
+      "name": "Mona Lisa",
+      "email": "mona@github.com",
+      "bio": "I only exist on GitHub.",
+      "company": "GitHub",
+      "blog": "https://github.com/about",
+      "location": "San Francisco, CA",
+      "type": "User"
+    },
+    "repos": [
+      {"name": "hello-world", "language": "Ruby"},
+      {"name": "test-repo", "language": "JavaScript"}
+    ]
   }
 }

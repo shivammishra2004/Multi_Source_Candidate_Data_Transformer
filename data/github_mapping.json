@@ -1,4 +1,6 @@
 {
+  "sarah.miller@university.edu": "https://github.com/sarah-jenkins-dev",
+  "alex.r@startup.io": "https://github.com/alex-r-code",
   "alice.golden@gold.com": "https://github.com/alice-golden",
   "bob.builds@construct.io": "https://github.com/bob-architect",
   "minimal.edgy@edge.com": "https://github.com/minimal-edgy",
@@ -6,5 +8,6 @@
   "zoe.oconnor@accent.com": "https://github.com/zoe-accent",
   "rate.limit@error.com": "https://github.com/rate-limity-new",
   "charlie@chap.com": "https://github.com/mismatch-charlie",
+  "priya@dev.com": "https://github.com/priya-old-handle",
   "deleted@nowhere.com": "https://github.com/deleted-user-404"
 }
