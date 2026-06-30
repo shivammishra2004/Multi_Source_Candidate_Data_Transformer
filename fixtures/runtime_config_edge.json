@@ -1,0 +1,10 @@
+{
+  "fields": [
+    { "path": "full_name", "type": "string", "required": true },
+    { "path": "ghost_field", "from": "nonexistent.nested.path", "type": "string" },
+    { "path": "tenth_skill", "from": "skills[9].name", "type": "string" },
+    { "path": "first_skill_obj", "from": "skills[0]", "type": "string" }
+  ],
+  "include_confidence": false,
+  "on_missing": "null"
+}

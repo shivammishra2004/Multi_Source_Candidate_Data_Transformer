@@ -37,7 +37,35 @@ class GitHubExtractor(BaseExtractor):
             if token:
                 headers["Authorization"] = f"Bearer {token}"
                 
-            response = requests.get(api_url, headers=headers, timeout=10)
+            def _http_get(req_url, **kwargs):
+                mock_file = os.getenv("GITHUB_MOCK_FILE")
+                if mock_file and os.path.exists(mock_file):
+                    import json
+                    with open(mock_file, 'r', encoding='utf-8') as f:
+                        mock_data = json.load(f)
+                    
+                    parts = req_url.rstrip("/").split("/")
+                    login = parts[-2] if parts[-1] == "repos" else parts[-1]
+                    entry = mock_data.get(login)
+                    
+                    if entry is not None:
+                        class FakeResponse:
+                            def __init__(self, status_code, payload):
+                                self.status_code = status_code
+                                self._payload = payload
+                                self.headers = {"X-RateLimit-Remaining": "0"} if status_code == 403 else {}
+                            def json(self):
+                                return self._payload
+                        
+                        if "status_code" in entry:
+                            return FakeResponse(entry["status_code"], {"message": entry.get("error", "error")})
+                        if parts[-1] == "repos":
+                            return FakeResponse(200, entry.get("repos", []))
+                        return FakeResponse(200, entry.get("profile", entry))
+                        
+                return requests.get(req_url, **kwargs)
+                
+            response = _http_get(api_url, headers=headers, timeout=10)
             
             if response.status_code == 403:
                 remaining = response.headers.get("X-RateLimit-Remaining")
@@ -47,7 +75,7 @@ class GitHubExtractor(BaseExtractor):
                 else:
                     logger.warning(f"Secondary rate limit hit for {url}. Backing off.")
                     time.sleep(2)
-                    response = requests.get(api_url, headers=headers, timeout=10)
+                    response = _http_get(api_url, headers=headers, timeout=10)
             
             if response.status_code == 200:
                 data = response.json()
@@ -80,11 +108,11 @@ class GitHubExtractor(BaseExtractor):
                 # Fetch repos to extract skills (languages)
                 repos_url = data.get('repos_url')
                 if repos_url:
-                    repos_response = requests.get(repos_url, headers=headers, timeout=10)
+                    repos_response = _http_get(repos_url, headers=headers, timeout=10)
                     if repos_response.status_code == 403:
                         if repos_response.headers.get("X-RateLimit-Remaining") != "0":
                             time.sleep(2)
-                            repos_response = requests.get(repos_url, headers=headers, timeout=10)
+                            repos_response = _http_get(repos_url, headers=headers, timeout=10)
                     if repos_response.status_code == 200:
                         repos_data = repos_response.json()
                         languages = set()

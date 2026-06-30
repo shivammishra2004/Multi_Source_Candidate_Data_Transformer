@@ -73,6 +73,21 @@ class Normalizer:
         return normalized
 
     @staticmethod
+    def normalize_skill(skill: str) -> Optional[str]:
+        res = Normalizer.normalize_skills([skill])
+        return list(res)[0] if res else None
+
+    @staticmethod
+    def normalize_country(country: str) -> Optional[str]:
+        # Stub for future implementation
+        return None
+
+    @staticmethod
+    def normalize_date_range(date_str: str) -> tuple:
+        # Stub for future implementation
+        return (None, None)
+
+    @staticmethod
     def normalize_name(name: str) -> Optional[str]:
         if not name:
             return None

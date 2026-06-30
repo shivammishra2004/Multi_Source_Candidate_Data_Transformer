@@ -1,0 +1,45 @@
+{
+  "janedoe-dev": {
+    "profile": {
+      "login": "janedoe-dev",
+      "name": "Jane Doe",
+      "email": "jane.doe@gmail.com",
+      "bio": "Senior Software Engineer | TechCorp",
+      "repos_url": "https://api.github.com/users/janedoe-dev/repos"
+    },
+    "repos": [
+      {"language": "Python"},
+      {"language": "Go"},
+      {"language": "JavaScript"},
+      {"language": null}
+    ]
+  },
+  "msmith-codes": {
+    "profile": {
+      "login": "msmith-codes",
+      "name": "John Smith",
+      "email": null,
+      "repos_url": "https://api.github.com/users/msmith-codes/repos"
+    },
+    "repos": [
+      {"language": "Python"}
+    ]
+  },
+  "ghostuser": {
+    "status_code": 404,
+    "error": "Not Found"
+  },
+  "ratelimited-user": {
+    "status_code": 403,
+    "error": "API rate limit exceeded"
+  },
+  "emptyrepo": {
+    "profile": {
+      "login": "emptyrepo",
+      "name": "Empty Person",
+      "email": "empty@nowhere.com",
+      "repos_url": "https://api.github.com/users/emptyrepo/repos"
+    },
+    "repos": []
+  }
+}

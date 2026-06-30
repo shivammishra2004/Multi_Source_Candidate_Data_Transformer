@@ -22,6 +22,7 @@ def main():
     parser.add_argument("--config", required=True, help="Path to the runtime config.json")
     parser.add_argument("--output", help="Path to save the output JSON (default is stdout)")
     parser.add_argument("--mapping", help="Optional JSON file mapping email addresses to GitHub URLs")
+    parser.add_argument("--github-mock", help="Optional JSON file containing mock GitHub API responses")
     
     args = parser.parse_args()
     
@@ -43,6 +44,11 @@ def main():
             sys.exit(1)
 
     logging.info("Starting Ingestion & Extraction...")
+    
+    if args.github_mock:
+        import os
+        os.environ["GITHUB_MOCK_FILE"] = args.github_mock
+        logging.info(f"Using mock GitHub data from {args.github_mock}")
     
     # 1. Extract dynamically
     all_extracted = []

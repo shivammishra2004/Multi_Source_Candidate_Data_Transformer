@@ -50,6 +50,33 @@ def custom_config():
 
 
 @pytest.fixture
+def edge_config():
+    """Config that references nonexistent / out-of-range field paths on purpose."""
+    with open(FIXTURES / "runtime_config_edge.json") as f:
+        return json.load(f)
+
+
+@pytest.fixture
+def large_recruiter_csv(tmp_path):
+    """Generates a few thousand synthetic rows for a basic scale/perf check."""
+    import csv as csv_module
+
+    path = tmp_path / "large_export.csv"
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv_module.writer(f)
+        writer.writerow(["name", "email", "phone", "current_company", "title"])
+        for i in range(5000):
+            writer.writerow([
+                f"Candidate {i}",
+                f"candidate{i}@example.com",
+                f"555-{i % 900 + 100}-{(i * 7) % 9000 + 1000}",
+                f"Company{i % 50}",
+                "Engineer" if i % 2 == 0 else "Manager",
+            ])
+    return path
+
+
+@pytest.fixture
 def mock_github_api(monkeypatch, github_mock_data):
     """
     Monkeypatches requests.get so the GitHub extractor never touches the

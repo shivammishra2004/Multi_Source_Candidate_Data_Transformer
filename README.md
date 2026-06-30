@@ -43,3 +43,12 @@ python -m src.cli --source csv data/ats_sample.csv 0.5 --source github data/urls
 2. **Normalizer**: A stateless class enforcing a "Good Enough" Regex strategy to standardize phones (E.164), emails, and skills.
 3. **Merge Engine**: Merges based on exact-match email keys. Uses predefined Source Trust Weights for scalars and Set Unions for lists. Implements a Statistical Variance Penalty for conflicting data.
 4. **Projector**: Dynamically reshapes the canonical profile into the final JSON payload based on the `config.json` rules, handling missing data gracefully.
+
+
+
+
+python -m src.cli --source csv data/ats_sample.csv 0.5 --source github Data/urls.text 0.9 --config data/runtime_config.json --github-mock data/github_api_mocks.json --mapping data/github_mapping.json --output final_profiles.json
+
+
+
+

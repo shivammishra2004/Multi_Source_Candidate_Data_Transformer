@@ -1,0 +1,7 @@
+name,email,phone,current_company,title
+Jane Doe,jane.doe@gmail.com,555-123-4567,TechCorp,Senior Engineer
+Jane Doe,jane.doe@gmail.com,+1 (555) 123-4567,TechCorp,Senior Engineer
+John Smith,JOHN.SMITH@outlook.com,,DataWorks Inc,Product Manager
+,,,,
+Maria Garcia,maria.garcia@startup.io,+91 98765 43210,CloudNine,Backend Developer
+Unknown Person,,1234,Some Co,Intern
