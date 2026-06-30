@@ -60,7 +60,10 @@ def test_pipeline_integration(tmp_path):
         github_profiles = github_extractor.extract()
         
     merger = MergeEngine(variance_penalty=0.05)
-    final_profiles = merger.merge_batch(github_profiles, csv_profiles, github_weight=0.9, csv_weight=0.5)
+    final_profiles = merger.merge_batch([
+        ("GitHub", 0.9, github_profiles),
+        ("CSV", 0.5, csv_profiles)
+    ])
     
     assert len(final_profiles) == 5
     

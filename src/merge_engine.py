@@ -1,5 +1,5 @@
 import logging
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from .models import CanonicalProfile, Provenance, Skill
 from .normalizer import Normalizer
 
@@ -12,48 +12,71 @@ class MergeEngine:
         """
         self.variance_penalty = variance_penalty
 
-    def merge_batch(self, github_profiles: List[CanonicalProfile], csv_profiles: List[CanonicalProfile], 
-                    github_weight: float = 0.9, csv_weight: float = 0.5) -> List[CanonicalProfile]:
+    def merge_batch(self, sources_data: List[Tuple[str, float, List[CanonicalProfile]]]) -> List[CanonicalProfile]:
         """
-        Merges two lists of profiles based on exact email match.
+        Merges an arbitrary number of profile lists based on exact email match.
+        :param sources_data: List of tuples (source_name, weight, profiles_list)
         """
-        # 1. Create GitHub hash map keyed by normalized email
-        github_map: Dict[str, CanonicalProfile] = {}
-        for p in github_profiles:
+        if not sources_data:
+            return []
+
+        # Start with the first source
+        current_src_name, current_weight, current_profiles = sources_data[0]
+        
+        # Apply standalone provenance to the first source
+        for p in current_profiles:
+            p.overall_confidence = current_weight
+            p.provenance = []
+            self._add_provenance_for_standalone(p, current_weight, current_src_name)
+
+        # Iteratively fold in other sources
+        for next_src_name, next_weight, next_profiles in sources_data[1:]:
+            for p in next_profiles:
+                p.overall_confidence = next_weight
+                p.provenance = []
+                self._add_provenance_for_standalone(p, next_weight, next_src_name)
+                
+            current_profiles = self._merge_profile_lists(
+                current_profiles, next_profiles, 
+                current_src_name, next_src_name
+            )
+            # Update current source name to reflect the combination
+            current_src_name = f"{current_src_name}+{next_src_name}"
+            
+        return current_profiles
+
+    def _merge_profile_lists(self, list1: List[CanonicalProfile], list2: List[CanonicalProfile], 
+                             src1_name: str, src2_name: str) -> List[CanonicalProfile]:
+        map1: Dict[str, CanonicalProfile] = {}
+        for p in list1:
             for email in p.emails:
                 norm_email = Normalizer.normalize_email(email)
                 if norm_email:
-                    github_map[norm_email] = p
+                    map1[norm_email] = p
                     
         merged_profiles = []
-        csv_processed_ids = set()
+        list1_processed_ids = set()
         
-        # 2. Iterate through CSV profiles
-        for csv_p in csv_profiles:
-            matched_github_p = None
-            for email in csv_p.emails:
+        for p2 in list2:
+            matched_p1 = None
+            for email in p2.emails:
                 norm_email = Normalizer.normalize_email(email)
-                if norm_email and norm_email in github_map:
-                    matched_github_p = github_map[norm_email]
+                if norm_email and norm_email in map1:
+                    matched_p1 = map1[norm_email]
                     break
             
-            if matched_github_p:
-                # Merge them!
-                merged = self._merge_two(matched_github_p, github_weight, "GitHub", csv_p, csv_weight, "CSV")
+            if matched_p1:
+                w1 = getattr(matched_p1, 'overall_confidence', 1.0)
+                w2 = getattr(p2, 'overall_confidence', 1.0)
+                merged = self._merge_two(matched_p1, w1, src1_name, p2, w2, src2_name)
                 merged_profiles.append(merged)
-                csv_processed_ids.add(id(matched_github_p))
+                list1_processed_ids.add(id(matched_p1))
             else:
-                # Standalone CSV
-                csv_p.overall_confidence = csv_weight
-                self._add_provenance_for_standalone(csv_p, csv_weight, "CSV")
-                merged_profiles.append(csv_p)
+                merged_profiles.append(p2)
                 
-        # 3. Add standalone GitHub profiles that weren't merged
-        for p in github_profiles:
-            if id(p) not in csv_processed_ids:
-                p.overall_confidence = github_weight
-                self._add_provenance_for_standalone(p, github_weight, "GitHub")
-                merged_profiles.append(p)
+        for p1 in list1:
+            if id(p1) not in list1_processed_ids:
+                merged_profiles.append(p1)
                 
         return merged_profiles
 

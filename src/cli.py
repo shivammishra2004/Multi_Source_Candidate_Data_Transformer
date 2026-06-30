@@ -47,23 +47,11 @@ def main():
             sys.exit(1)
             
     # 2. Merge 
-    # For backward compatibility with the existing MergeEngine.merge_batch, 
-    # we'll assume the first two sources are github and csv if present. 
-    # To truly support N sources, MergeEngine would need an update, 
-    # but for now we fold them using the existing logic if there are 2.
     logging.info("Merging profiles...")
     merger = MergeEngine(variance_penalty=0.05)
     
-    if len(all_extracted) >= 2:
-        # Map them back for the old merge_batch signature temporarily
-        src1, w1, profs1 = all_extracted[0]
-        src2, w2, profs2 = all_extracted[1]
-        canonical_profiles = merger.merge_batch(profs1, profs2, github_weight=w1, csv_weight=w2)
-        # Note: if there are >2 sources, they are currently ignored by the old merge_batch.
-        if len(all_extracted) > 2:
-            logging.warning("MergeEngine currently only merges the first 2 sources.")
-    elif len(all_extracted) == 1:
-        canonical_profiles = all_extracted[0][2]
+    if len(all_extracted) >= 1:
+        canonical_profiles = merger.merge_batch(all_extracted)
     else:
         canonical_profiles = []
         
