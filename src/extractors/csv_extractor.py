@@ -24,6 +24,8 @@ class CSVExtractor(BaseExtractor):
                 for row in reader:
                     # Clean keys (lowercase, strip)
                     cleaned_row = {k.strip().lower(): v.strip() for k, v in row.items() if k and v.strip()}
+                    if not cleaned_row:
+                        continue
                     
                     profile = CanonicalProfile()
                     # We will do greedy extraction: if something is missing, just don't set it (leave as default)

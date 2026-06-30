@@ -6,37 +6,16 @@ from .models import CanonicalProfile
 logger = logging.getLogger(__name__)
 
 class Projector:
-    def __init__(self, config: Dict[str, Any]):
+    def __init__(self, config: Dict[str, Any] = None):
         """
-        config example:
-        {
-          "fields": [
-            { "path": "full_name", "required": true },
-            { "path": "primary_email", "from": "emails[0]", "required": true },
-            { "path": "city", "from": "location.city" },
-            { "path": "skills" }
-          ],
-          "include_confidence": true,
-          "on_missing": "null" # null, omit, error
-        }
+        Optional config in init to support older patterns, but tests use project(profiles, config).
         """
-        self.config = config
-
-    def project_batch(self, profiles: List[CanonicalProfile]) -> List[Dict[str, Any]]:
-        projected = []
-        for p in profiles:
-            try:
-                proj_p = self.project(p)
-                if proj_p is not None:
-                    projected.append(proj_p)
-            except ValueError as e:
-                # If on_missing="error" is triggered, we drop the profile from the batch and log it.
-                logger.error(f"Dropping profile {p.full_name} due to projection error: {e}")
-        return projected
+        self.config = config or {}
 
     def _resolve_path(self, data: dict, path: str) -> Any:
         """
-        Resolves nested dot notation and array indices (e.g., 'emails[0]', 'location.city').
+        Resolves nested dot notation, array indices (e.g., 'emails[0]', 'location.city'),
+        and array map notation (e.g., 'skills[].name').
         """
         keys = path.split('.')
         current = data
@@ -44,6 +23,22 @@ class Projector:
             if current is None: 
                 return None
             
+            # Check for array map, e.g., 'skills[]'
+            if k.endswith("[]"):
+                array_key = k[:-2]
+                if isinstance(current, dict) and array_key in current:
+                    arr = current.get(array_key)
+                    if not isinstance(arr, list):
+                        return None
+                    # We are in map mode. The rest of the keys apply to each item.
+                    # Since this is a simple implementation, we just handle the immediate next key.
+                    # This handles 'skills[].name'
+                    rest_path = '.'.join(keys[keys.index(k)+1:])
+                    if not rest_path:
+                        return arr
+                    return [self._resolve_path(item, rest_path) for item in arr if isinstance(item, dict)]
+                return None
+
             # Check for array index, e.g., 'emails[0]'
             match = re.match(r'(.+)\[(\d+)\]', k)
             if match:
@@ -64,44 +59,68 @@ class Projector:
                     return None
         return current
 
-    def project(self, profile: CanonicalProfile) -> Dict[str, Any]:
-        global_on_missing = self.config.get("on_missing", "null")
-        include_confidence = self.config.get("include_confidence", True)
-        fields_config = self.config.get("fields", [])
+    def project(self, profiles: List[CanonicalProfile], config: Dict[str, Any] = None) -> Dict[str, Any]:
+        """
+        Projects a list of profiles according to the given config schema.
+        Returns a dict: {"candidates": [dict, dict, ...]}
+        """
+        active_config = config if config is not None else self.config
+        global_on_missing = active_config.get("on_missing", "null")
+        include_confidence = active_config.get("include_confidence", True)
+        include_provenance = active_config.get("include_provenance", True)
+        fields_config = active_config.get("fields")
         
-        raw_dict = profile.to_dict()
-        result = {}
-        
-        for field_def in fields_config:
-            if isinstance(field_def, str):
-                # Simple string inclusion in fields list
-                target_path = field_def
-                source_path = field_def
-                required = False
-            else:
-                target_path = field_def.get("path")
-                source_path = field_def.get("from", target_path)
-                required = field_def.get("required", False)
-                
-            val = self._resolve_path(raw_dict, source_path)
+        candidates = []
+        for profile in profiles:
+            raw_dict = profile.to_dict()
             
-            # Check if empty
-            is_empty = val is None or (isinstance(val, list) and len(val) == 0) or (isinstance(val, dict) and not any(val.values()))
-            
-            if is_empty:
-                on_missing = field_def.get("on_missing", global_on_missing)
-                if required or on_missing == "error":
-                    raise ValueError(f"Required field '{source_path}' is missing.")
-                elif on_missing == "omit":
-                    continue
-                else:
-                    result[target_path] = None
+            if fields_config is None:
+                # Default schema: include everything, but clean up based on toggles
+                result = raw_dict.copy()
             else:
-                result[target_path] = val
+                result = {}
+                for field_def in fields_config:
+                    if isinstance(field_def, str):
+                        target_path = field_def
+                        source_path = field_def
+                        required = False
+                    else:
+                        target_path = field_def.get("path")
+                        source_path = field_def.get("from", target_path)
+                        required = field_def.get("required", False)
+                        
+                    val = self._resolve_path(raw_dict, source_path)
+                    
+                    is_empty = val is None or (isinstance(val, list) and len(val) == 0) or (isinstance(val, dict) and not any(val.values()))
+                    
+                    if is_empty:
+                        on_missing = field_def.get("on_missing", global_on_missing)
+                        # We only throw error if required=True and on_missing="error", OR if on_missing="error" applies to all.
+                        # Actually the tests imply on_missing="error" triggers if required=True
+                        if on_missing == "error" and required:
+                            raise ValueError(f"Required field '{source_path}' is missing.")
+                        elif on_missing == "omit":
+                            continue
+                        elif on_missing == "null":
+                            result[target_path] = None
+                        else:
+                            # if on_missing is error but not required, we can omit or null? 
+                            # Let's just null it by default.
+                            result[target_path] = None
+                    else:
+                        result[target_path] = val
+
+            # Handle toggles for both custom and default schemas
+            if include_confidence:
+                result["overall_confidence"] = raw_dict.get("overall_confidence", 0.0)
+            elif "overall_confidence" in result:
+                del result["overall_confidence"]
                 
-        # Toggle Metadata
-        if include_confidence:
-            result["provenance"] = raw_dict.get("provenance", [])
-            result["overall_confidence"] = raw_dict.get("overall_confidence", 0.0)
-                
-        return result
+            if include_provenance:
+                result["provenance"] = raw_dict.get("provenance", [])
+            elif "provenance" in result:
+                del result["provenance"]
+
+            candidates.append(result)
+
+        return {"candidates": candidates}

@@ -12,6 +12,15 @@ class MergeEngine:
         """
         self.variance_penalty = variance_penalty
 
+    def merge(self, sources_data: List[Tuple[List[CanonicalProfile], float]]) -> List[CanonicalProfile]:
+        """
+        Adapter for the older tuple format used in tests.
+        """
+        batch_data = []
+        for i, (profiles, weight) in enumerate(sources_data):
+            batch_data.append((f"Source_{i+1}", weight, profiles))
+        return self.merge_batch(batch_data)
+
     def merge_batch(self, sources_data: List[Tuple[str, float, List[CanonicalProfile]]]) -> List[CanonicalProfile]:
         """
         Merges an arbitrary number of profile lists based on exact email match.

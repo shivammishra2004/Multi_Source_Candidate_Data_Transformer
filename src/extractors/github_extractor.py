@@ -90,7 +90,8 @@ class GitHubExtractor(BaseExtractor):
                             if lang:
                                 languages.add(lang)
                         
-                        for lang in languages:
+                        from ..normalizer import Normalizer
+                        for lang in Normalizer.normalize_skills(list(languages)):
                             profile.skills.append(Skill(name=lang, confidence=self.trust_weight))
 
                 profiles.append(profile)
@@ -111,7 +112,7 @@ class GitHubExtractor(BaseExtractor):
             with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 # Process URLs concurrently
                 future_to_url = {executor.submit(self._fetch_profile, url): url for url in urls}
-                for future in concurrent.futures.as_completed(future_to_url):
+                for future in future_to_url:
                     profiles = future.result()
                     all_profiles.extend(profiles)
                     

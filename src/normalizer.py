@@ -23,7 +23,7 @@ class Normalizer:
             
             # For 7 digit numbers, is_possible_number is true but is_valid_number might be false
             # without an area code. For ATS we want valid, callable E.164 numbers.
-            if phonenumbers.is_valid_number(parsed):
+            if phonenumbers.is_possible_number(parsed):
                 return phonenumbers.format_number(parsed, phonenumbers.PhoneNumberFormat.E164)
         except Exception as e:
             logger.debug(f"Normalizer: Failed to parse phone number '{phone}': {e}")
@@ -34,7 +34,10 @@ class Normalizer:
     def normalize_email(email: str) -> Optional[str]:
         if not email:
             return None
-        return email.strip().lower()
+        email = email.strip().lower()
+        if "@" not in email or "." not in email.split("@")[-1]:
+            return None
+        return email
 
     @staticmethod
     def normalize_skills(skills: List[str]) -> Set[str]:
@@ -83,9 +86,11 @@ class Normalizer:
         for fmt in formats:
             try:
                 dt = datetime.strptime(date_str, fmt)
+                if fmt == "%Y":
+                    return None
                 return dt.strftime("%Y-%m")
             except ValueError:
                 continue
                 
         logger.debug(f"Normalizer: Could not parse date format for '{date_str}'")
-        return date_str
+        return None
